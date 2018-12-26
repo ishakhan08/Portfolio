@@ -97,13 +97,14 @@ $(function() {
 
 // change color on scrolling of navbar
 
-$(function() {
-  $(window).scroll(function () {
-     if ($(this).scrollTop() > 50) {
-        $('nav').addClass('changeColor')
-     }
-     if ($(this).scrollTop() < 50) {
-        $('nav').removeClass('changeColor')
-     }
-  });
+//annoying puppy
+var annoyingDog = $('.annoying-dog');
+var annoyingDogAudio = $('body').find('audio')[0];
+
+annoyingDog.hover(function(){
+  annoyingDogAudio.play();
+  $('.pet-me').hide();
+}, function(){
+  annoyingDogAudio.pause();
+  $('.pet-me').show();
 });
